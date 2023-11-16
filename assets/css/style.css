@@ -102,6 +102,10 @@ h6 {
   z-index: 1001; /* Um valor maior do que o z-index dos elementos da navbar */
 }
 
+/* Estilos para o corpo quando o menu está ativo */
+body.menu-active {
+  overflow: hidden;
+}
 
 
 .inscricao button[type=button] {
@@ -507,6 +511,35 @@ h6 {
 /**
 * Mobile Navigation 
 */
+
+
+/* Adiciona um retângulo como fundo para o texto na barra de navegação móvel */
+.navbar-mobile a {
+  position: relative;
+  display: inline-block; /* Garante que o elemento tenha a largura exata do conteúdo (texto) */
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #000000; /* cor do texto não ativo */
+  background-color: rgba(255, 197, 126, 0.5); /* cor do retângulo com transparência */
+  border-radius: 6px; /* borda arredondada conforme necessário */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave à cor do retângulo */
+  margin-right: 10px; /* Adiciona margem à direita de cada link */
+  margin-bottom: 10px; /* Adiciona margem na parte inferior de cada link */
+}
+
+/* Remove a margem do último link na barra de navegação móvel */
+.navbar-mobile a:last-child {
+  margin-right: 0;
+}
+
+/* Altera a cor do retângulo ao passar o mouse sobre o link na barra de navegação móvel */
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
+  background-color: rgba(255, 255, 255, 0.9); /* cor do retângulo com transparência ao passar o mouse */
+  color: #000000; /* cor do texto ativo */
+}
+
 .mobile-nav-toggle {
   color: #ffc57e; /*botao abrir menu flutuante*/
   font-size: 28px;
@@ -548,9 +581,13 @@ h6 {
 }
 
 .navbar-mobile ul {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: 99999;
   position: absolute;
+  font-size: 40px;
   top: 55px;
   right: 15px;
   bottom: 15px;
@@ -561,10 +598,8 @@ h6 {
   overflow-y: auto;
   transition: 0.3s;
   background-size: cover; /* Ajuste conforme necessário */
-   
-  
-
 }
+
 
 .navbar-mobile a,
 .navbar-mobile a:focus {
@@ -576,7 +611,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #ffffff;  /* ativo ou ao passar o mouse */
+  color: #db9035;  /* ativo ou ao passar o mouse */
 }
 
 .navbar-mobile .getstarted,
@@ -592,29 +627,32 @@ h6 {
   z-index: 99;
   opacity: 1;
   visibility: visible;
-  background: url("../img/textura-bg.jpg") top center; /*abrir bogó */
-    background-size: cover; /* Ajuste conforme necessário */
-  
+  background: transparent; /* Define o fundo como transparente */
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
-  
+
 }
+
 
 .navbar-mobile .dropdown ul li {
   min-width: 200px;
 }
 
 .navbar-mobile .dropdown ul a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 20px;
-  color:  #000000;/*cor texto nao ativo bogó */
+  color: #000000; /* cor do texto não ativo bogó */
 }
 
 .navbar-mobile .dropdown ul a i {
   font-size: 12px;
+  color: #db9035; /* cor do texto não ativo bogó */
   
 }
 
 .navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul .active:hover
 .navbar-mobile .dropdown ul li:hover>a {
   color: #ffffff;/*cor texto ativo bogó */
 }
@@ -623,6 +661,7 @@ h6 {
   display: block;
 
 }
+
 
 /*--------------------------------------------------------------
 # Hero Section
