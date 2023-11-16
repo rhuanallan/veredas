@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     whatsappText += "Assunto: " + (subjectInput.value ? subjectInput.value : "N/A");
 
     // Codificar a string para uso na URL
-    var whatsappUrl = "https://wa.me/557499914039?text=" + encodeURIComponent(whatsappText);
+    var whatsappUrl = "https://wa.me/5574998154643?text=" + encodeURIComponent(whatsappText);
 
     // Abre a URL do WhatsApp em uma nova guia
     window.open(whatsappUrl, "_blank");
