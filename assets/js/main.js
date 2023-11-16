@@ -34,6 +34,7 @@
       }
     }
   }
+  
 
   /**
    * Easy on scroll event listener 
@@ -115,53 +116,91 @@
     onscroll(document, toggleBacktotop)
   }
 
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+ /**
+ * Mobile nav dropdowns activate
+ */
+on('click', '.navbar .dropdown > a', function (e) {
+  if (select('#navbar').classList.contains('navbar-mobile')) {
+    e.preventDefault();
+    this.nextElementSibling.classList.toggle('dropdown-active');
+  }
+}, true);
 
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
+/**
+ * Scrool with offset on links with a class name .scrollto
+ */
+on('click', '.scrollto', function (e) {
+  if (select(this.hash)) {
+    e.preventDefault();
+
+    let navbar = select('#navbar');
+    let navbarToggle = select('.mobile-nav-toggle');
+
+    if (navbar.classList.contains('navbar-mobile')) {
+      // Fecha o menu ao clicar em um link
+      navbar.classList.remove('navbar-mobile');
+      navbarToggle.classList.toggle('bi-list');
+      navbarToggle.classList.toggle('bi-x');
+
+      // Reativa a rolagem ao fechar o menu
+      enableScroll();
     }
-  }, true)
 
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
+    scrollto(this.hash);
+  }
+}, true);
 
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
+/**
+ * Scroll with offset on page load with hash links in the url
+ */
+window.addEventListener('load', () => {
+  if (window.location.hash) {
+    if (select(window.location.hash)) {
+      scrollto(window.location.hash);
     }
-  }, true)
+  }
+});
 
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
-  });
+// Adiciona um evento ao clicar no botão de abrir/fechar o menu para alternar a rolagem
+on('click', '.mobile-nav-toggle', function () {
+  let navbar = select('#navbar');
+  let navbarToggle = select('.mobile-nav-toggle');
+
+  if (navbar.classList.contains('navbar-mobile')) {
+    // Fecha o menu
+    navbar.classList.remove('navbar-mobile');
+    navbarToggle.classList.toggle('bi-list');
+    navbarToggle.classList.toggle('bi-x');
+
+    // Reativa a rolagem ao fechar o menu
+    enableScroll();
+  } else {
+    // Abre o menu
+    navbar.classList.add('navbar-mobile');
+    navbarToggle.classList.toggle('bi-list');
+    navbarToggle.classList.toggle('bi-x');
+
+    // Desabilita a rolagem ao abrir o menu
+    disableScroll();
+  }
+});
+
+// Adiciona um evento ao clicar em um link do menu para reativar a rolagem
+on('click', '#navbar .nav-menu a', function () {
+  // Reativa a rolagem ao fechar o menu
+  enableScroll();
+});
+
+// Função para desabilitar a rolagem
+function disableScroll() {
+  document.body.style.overflow = 'hidden';
+}
+
+// Função para reativar a rolagem
+function enableScroll() {
+  document.body.style.overflow = '';
+}
+
 
   /**
    * Preloader
