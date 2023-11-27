@@ -138,6 +138,8 @@ body.menu-active {
 
 }
 
+
+
 /*--------------------------------------------------------------
 # icone whatsapp
 --------------------------------------------------------------*/
@@ -721,17 +723,32 @@ body.menu-active {
 #hero .btn-menu,
 #hero .btn-book {
   font-weight: 600;
-  font-size: 3vw; /* Utilizando unidade relativa para o tamanho da fonte */
   letter-spacing: 0.5px;
   text-transform: uppercase;
   display: inline-block;
-  padding: 2% 4%; /* Utilizando porcentagem para o padding */
-  margin-bottom: 2%; /* Adicionando margem inferior para espaçamento entre os botões */
+  padding: 2% 4%;
+  margin-bottom: 2%;
   border-radius: 50px;
   transition: 0.3s;
   line-height: 1;
   color: white;
   border: 2px solid #cda45e;
+}
+
+/* Modo Desktop */
+@media (min-width: 768px) {
+  #hero .btn-menu,
+  #hero .btn-book {
+    font-size: 1em;
+  }
+}
+
+/* Modo Mobile */
+@media (max-width: 767px) {
+  #hero .btn-menu,
+  #hero .btn-book {
+    font-size: 3vw;
+  }
 }
 
 
