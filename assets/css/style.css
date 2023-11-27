@@ -518,7 +518,7 @@ body.menu-active {
   position: relative;
   display: inline-block; /* Garante que o elemento tenha a largura exata do conteúdo (texto) */
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: 5px;
   color: #000000; /* cor do texto não ativo */
   background-color: rgba(255, 197, 126, 0.5); /* cor do retângulo com transparência */
   border-radius: 6px; /* borda arredondada conforme necessário */
@@ -652,7 +652,7 @@ body.menu-active {
 }
 
 .navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover
+.navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
   color: #ffffff;/*cor texto ativo bogó */
 }
@@ -721,17 +721,21 @@ body.menu-active {
 #hero .btn-menu,
 #hero .btn-book {
   font-weight: 600;
-  font-size: 13px;
+  font-size: 3vw; /* Utilizando unidade relativa para o tamanho da fonte */
   letter-spacing: 0.5px;
   text-transform: uppercase;
   display: inline-block;
-  padding: 12px 30px;
+  padding: 2% 4%; /* Utilizando porcentagem para o padding */
+  margin-bottom: 2%; /* Adicionando margem inferior para espaçamento entre os botões */
   border-radius: 50px;
   transition: 0.3s;
   line-height: 1;
   color: white;
   border: 2px solid #cda45e;
 }
+
+
+
 
 #hero .btn-menu:hover,
 #hero .btn-book:hover {
