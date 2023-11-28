@@ -517,16 +517,15 @@ body.menu-active {
 
 /* Adiciona um retângulo como fundo para o texto na barra de navegação móvel */
 .navbar-mobile a {
-  position: relative;
-  display: inline-block; /* Garante que o elemento tenha a largura exata do conteúdo (texto) */
-  padding: 10px 20px;
-  font-size: 5px;
-  color: #000000; /* cor do texto não ativo */
-  background-color: rgba(255, 197, 126, 0.5); /* cor do retângulo com transparência */
-  border-radius: 6px; /* borda arredondada conforme necessário */
-  transition: background-color 0.3s ease; /* Adiciona uma transição suave à cor do retângulo */
-  margin-right: 10px; /* Adiciona margem à direita de cada link */
-  margin-bottom: 10px; /* Adiciona margem na parte inferior de cada link */
+  display: inline-block;
+  padding: 3vw 5vw; /* Use unidades de viewport para o padding */
+  font-size: 3vw; /* Use unidades de viewport para o tamanho da fonte */
+  color: #000000;
+  background-color: rgba(255, 197, 126, 0.5);
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  margin-right: 2vw; /* Use unidades de viewport para a margem direita */
+  margin-bottom: 2vh; /* Use unidades de viewport para a margem inferior */
 }
 
 /* Remove a margem do último link na barra de navegação móvel */
@@ -999,6 +998,12 @@ section {
 .about .about-img {
   position: relative;
   transition: 0.5s;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about .about-img img {
