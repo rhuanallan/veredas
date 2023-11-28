@@ -587,7 +587,7 @@ body.menu-active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 99999;
+  z-index: 99998;
   position: absolute;
   font-size: 2.5vw; /* Unidade de viewport para tamanho da fonte */
   top: 5vw;
