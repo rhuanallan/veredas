@@ -589,18 +589,27 @@ body.menu-active {
   align-items: center;
   z-index: 99999;
   position: absolute;
-  font-size: 40px;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
-  padding: 10px 0;
+  font-size: 2.5vw; /* Unidade de viewport para tamanho da fonte */
+  top: 5vw;
+  right: 1.5vw;
+  bottom: 1.5vw;
+  left: 1.5vw;
+  padding: 1vw 0; /* Unidade de viewport para padding */
   border-radius: 6px;
   background: url("../img/mapa-bg.jpg") top center;
+  background-size: cover;
   overflow-y: auto;
   transition: 0.3s;
-  background-size: cover; /* Ajuste conforme necessário */
 }
+
+/* Adaptação para telas menores */
+@media screen and (max-width: 600px) {
+  .navbar-mobile ul {
+    font-size: 5vw;
+    /* Outras alterações de estilo para telas menores, se necessário */
+  }
+}
+
 
 
 .navbar-mobile a,
