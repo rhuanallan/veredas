@@ -83,29 +83,7 @@ h6 {
 }
 
 
-/* Adicione este estilo ao seu arquivo CSS */
 
-.bi-x::before {
-  content: "\f62a";
-  position: fixed;
-  top: 20px; /* Ajuste conforme necessário para a distância do topo */
-  right: 10px; /* Ajuste conforme necessário para a distância da direita */
-  z-index: 99999; /* Um valor maior do que o z-index do menu suspenso */
-}
-
-/* Adicione este estilo ao seu arquivo CSS */
-
-#navbar .bi-list.mobile-nav-toggle {
-  position: absolute;
-  top: -15px; /* Ajuste conforme necessário para a distância do topo dentro da navbar */
-  right: 10px; /* Ajuste conforme necessário para a distância da direita dentro da navbar */
-  z-index: 1001; /* Um valor maior do que o z-index dos elementos da navbar */
-}
-
-/* Estilos para o corpo quando o menu está ativo */
-body.menu-active {
-  overflow: hidden;
-}
 
 
 .inscricao button[type=button] {
@@ -514,6 +492,29 @@ body.menu-active {
 * Mobile Navigation 
 */
 
+/* Adicione este estilo ao seu arquivo CSS */
+
+.bi-x::before {
+  content: "\f62a";
+  position: fixed;
+  top: 40px; /* Ajuste conforme necessário para a distância do topo */
+  right: 20px; /* Ajuste conforme necessário para a distância da direita */
+  z-index: 99999; /* Um valor maior do que o z-index do menu suspenso */
+}
+
+/* Adicione este estilo ao seu arquivo CSS */
+
+#navbar .bi-list.mobile-nav-toggle {
+  position: absolute;
+  top: -15px; /* Ajuste conforme necessário para a distância do topo dentro da navbar */
+  right: 10px; /* Ajuste conforme necessário para a distância da direita dentro da navbar */
+  z-index: 1001; /* Um valor maior do que o z-index dos elementos da navbar */
+}
+
+/* Estilos para o corpo quando o menu está ativo */
+body.menu-active {
+  overflow: hidden;
+}
 
 /* Adiciona um retângulo como fundo para o texto na barra de navegação móvel */
 .navbar-mobile a {
